@@ -2,13 +2,16 @@
 name = "rate_rs"
 version = "0.1.0"
 edition = "2024"
+description = "A Universal Rate Limiting Library for Rust Web Frameworks"
+licence = "Apache-2.0"
+authors = ["Mahmud Bello <blinkztyler@gmail.com>"]
 
 [dependencies]
 async-trait = "0.1"
 serde = { version = "1.0", features = ["derive"] }
 thiserror = "1.0"
 dashmap = "5"
-tokio = { version = "1", features = ["rt-multi-thread", "macros", "time"] }
+tokio = { version = "1", features = ["rt-multi-thread ", "macros", "time"] }
 chrono = { version = "0.4", features = ["clock", "serde"] }
 parking_lot = "0.12"
 # optional redis backend
