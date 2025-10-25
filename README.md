@@ -29,6 +29,10 @@ Add to your `Cargo.toml`:
 [dependencies]
 rate_rs = { git = "https://github.com/mahmudsudo/rate_rs" }
 ```
+alternatively :
+```bash
+cargo add rate_rs
+```
 
 ## Example: Axum
 
