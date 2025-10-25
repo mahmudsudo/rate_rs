@@ -1,0 +1,14 @@
+name: CI
+on: [push, pull_request]
+
+
+jobs:
+test:
+runs-on: ubuntu-latest
+services: {}
+steps:
+- uses: actions/checkout@v4
+- name: Install Rust
+uses: dtolnay/rust-toolchain-action@stable
+- name: Run tests
+run: cargo test --workspace --all-features

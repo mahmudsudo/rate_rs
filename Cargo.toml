@@ -1,0 +1,37 @@
+[package]
+name = "rate_rs"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+async-trait = "0.1"
+serde = { version = "1.0", features = ["derive"] }
+thiserror = "1.0"
+dashmap = "5"
+tokio = { version = "1", features = ["rt-multi-thread", "macros", "time"] }
+chrono = { version = "0.4", features = ["clock", "serde"] }
+parking_lot = "0.12"
+# optional redis backend
+redis = { version = "0.22", optional = true, features = ["aio", "tokio-comp", "json"] }
+actix-web = "4"
+futures = "0.3.31"
+axum = "0.7"
+tower = "0.5.2"
+serde_json = "1.0.145"
+
+
+[features]
+default = ["in-memory"]
+in-memory = []
+redis = ["dep:redis"]
+
+
+[dev-dependencies]
+axum = "0.7"
+actix-web = "4"
+reqwest = { version = "0.11", features = ["json", "rustls-tls"] }
+
+
+
+[package.metadata.docs.rs]
+all-features = true
